@@ -57,17 +57,21 @@ Claude Code plugin containing specialized agents for the NORRIQ Commerce departm
 
 ## Installation
 
-### Quick Start
+### Via Marketplace (Recommended)
 
-Install the plugin directly from the Azure DevOps repository:
+**Step 1: Add the NORRIQ Claude Marketplace**
 
 ```bash
-/plugin install git+https://norriq.visualstudio.com/Team%20Ecommerce/_git/NORRIQ.Commerce.Agents
+/plugin marketplace add norriq-eBusiness/NORRIQ.Claude.Marketplace
 ```
 
-### Verify Installation
+**Step 2: Install the Plugin**
 
-Check that the plugin is installed:
+```bash
+/plugin install norriq-commerce-agents@norriq-claude-marketplace
+```
+
+**Step 3: Verify Installation**
 
 ```bash
 /plugin list
@@ -77,14 +81,14 @@ You should see `norriq-commerce-agents` in the list.
 
 ### Getting Updates
 
-When new versions are released, reinstall to get updates:
+When new versions are released:
 
 ```bash
 /plugin uninstall norriq-commerce-agents
-/plugin install git+https://norriq.visualstudio.com/Team%20Ecommerce/_git/NORRIQ.Commerce.Agents
+/plugin install norriq-commerce-agents@norriq-claude-marketplace
 ```
 
-### Future: Team Deployment (Optional)
+### Advanced: Team Deployment (Optional)
 
 For automatic installation across projects, add to your project's `.claude/settings.json`:
 
@@ -93,7 +97,7 @@ For automatic installation across projects, add to your project's `.claude/setti
   "plugins": [
     {
       "name": "norriq-commerce-agents",
-      "source": "git+https://norriq.visualstudio.com/Team%20Ecommerce/_git/NORRIQ.Commerce.Agents"
+      "source": "norriq-eBusiness/NORRIQ.Commerce.Agents"
     }
   ]
 }
