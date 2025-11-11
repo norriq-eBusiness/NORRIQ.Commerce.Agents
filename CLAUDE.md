@@ -148,6 +148,40 @@ color: blue                # UI color
 - Authorization & security (unauthenticated access, role bypass, CSRF)
 - Business logic edge cases (zero quantities, negative values, invalid combinations)
 
+## Prerequisites for Scout & Karen
+
+Both Scout and Karen agents require Azure CLI to fetch work items from Azure DevOps.
+
+**Required setup:**
+```bash
+# Install Azure CLI (varies by OS)
+brew install azure-cli  # macOS
+
+# Install DevOps extension
+az extension add --name azure-devops
+
+# Authenticate
+az login
+az devops configure --defaults organization=https://norriq.visualstudio.com
+```
+
+**Agents will check:**
+1. If `az` command exists
+2. If `azure-devops` extension is installed (v1.0.2+)
+3. If user is authenticated
+
+**If prerequisites missing:**
+- Agent will provide setup instructions
+- Agent will stop execution until setup is complete
+- User must complete setup and re-run agent
+
+**Work item access:**
+- Agents use: `az boards work-item show --id <id> --organization https://norriq.visualstudio.com`
+- Requires user to have Azure DevOps access (already granted to team)
+- Can extract: title, description, acceptance criteria, state, estimate, custom fields
+
+**Note:** Bouncer and Sherlock do not require Azure CLI.
+
 ## Technology Context
 
 ### Frontend Stack (NORRIQ Commerce)

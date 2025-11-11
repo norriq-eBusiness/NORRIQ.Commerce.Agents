@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.3.2] - 2025-11-11
+
+### Added
+- **Azure CLI prerequisite checks** - Scout and Karen now verify Azure CLI setup before execution
+- **Setup instructions** - Agents provide step-by-step Azure CLI installation and authentication guide if prerequisites are missing
+- **Prerequisites documentation** - Added comprehensive setup guide in README and CLAUDE.md
+
+### Changed
+- Scout and Karen agents now gracefully handle missing Azure CLI
+- Improved work item fetching with proper organization parameter
+
 ## [0.3.1] - 2025-11-11
 
 ### Changed

@@ -2,6 +2,42 @@
 
 Claude Code plugin containing specialized agents for the NORRIQ Commerce department. These agents help with implementation planning, code quality validation, thorough code reviews, and QA testing.
 
+## Prerequisites
+
+### Azure CLI Setup (Required for Scout & Karen)
+
+Scout and Karen agents fetch work items from Azure DevOps and require Azure CLI with the DevOps extension.
+
+**1. Install Azure CLI:**
+
+- **macOS:** `brew install azure-cli`
+- **Windows:** Download from https://aka.ms/installazurecliwindows
+- **Linux:** https://learn.microsoft.com/en-us/cli/azure/install-azure-cli-linux
+
+**2. Install Azure DevOps Extension:**
+
+```bash
+az extension add --name azure-devops
+```
+
+**3. Authenticate:**
+
+```bash
+az login
+az devops configure --defaults organization=https://norriq.visualstudio.com
+```
+
+**4. Verify Setup:**
+
+```bash
+# Test by fetching any work item
+az boards work-item show --id <any-work-item-id>
+```
+
+If you see work item details, you're all set!
+
+**Note:** Bouncer and Sherlock do not require Azure CLI - they work directly with your codebase.
+
 ## Agents
 
 ### 🔍 Scout - Implementation Planning
