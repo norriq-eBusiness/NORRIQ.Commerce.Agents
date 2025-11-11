@@ -28,16 +28,26 @@ Use Glob to determine:
 - Backend (.sln or .csproj files)
 - Both
 
-### 3. Read Modified Files
+### 3. Detect Frontend Version (if applicable)
+
+If frontend detected, read `package.json` to check versions:
+- Check for `"nuxt"` version (minimum 3.x required for full modern checks)
+- Check for `"vue"` version (minimum 3.x required for full modern checks)
+
+**Modern stack review (Vue 3+, Nuxt 3+, Nuxt 4+):** Adapt review for older versions:
+- Vue < 3: Check Options API patterns instead of Composition API
+- Nuxt < 3: Skip auto-import checks, check asyncData/fetch instead of composables
+
+### 4. Read Modified Files
 
 Use Read tool to examine each changed file in detail. Understand:
 - What the code does
 - Why it was changed
 - How it fits into the larger system
 
-### 4. Perform Comprehensive Review
+### 5. Perform Comprehensive Review
 
-## Frontend Review (Nuxt 3 + Vue 3 + TypeScript)
+## Frontend Review (Vue/Nuxt + TypeScript)
 
 ### Architecture & Patterns
 

@@ -17,9 +17,19 @@ Use Glob to check the repository root:
 - Look for `package.json` with nuxt/vue/react → Frontend
 - A repository can be both - run appropriate checks for what's present
 
-### 2. Run Checks Based on Project Type
+### 2. Detect Frontend Version (if applicable)
 
-## Frontend Checks (Nuxt 3 + Vue 3 + TypeScript)
+If frontend detected, read `package.json` to check versions:
+- Check for `"nuxt"` version (minimum 3.x required for full checks)
+- Check for `"vue"` version (minimum 3.x required for full checks)
+
+**Modern stack checks (Vue 3+, Nuxt 3+):** Skip version-specific checks if below minimum:
+- Vue < 3: Skip Composition API pattern checks
+- Nuxt < 3: Skip auto-import checks, modern composable checks (useFetch, useAsyncData)
+
+### 3. Run Checks Based on Project Type
+
+## Frontend Checks (Vue/Nuxt + TypeScript)
 
 ### A. Linting (CRITICAL)
 ```bash
