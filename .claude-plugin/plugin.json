@@ -2,7 +2,11 @@
   "name": "norriq-commerce-agents",
   "version": "0.1.0",
   "description": "Commerce department agents for code review, QA, and quality assurance tasks",
-  "author": "NORRIQ Commerce Team",
-  "agents": ["agents"],
-  "commands": ["commands"]
+  "author": {
+    "name": "NORRIQ Commerce Team"
+  },
+  "agents": [
+    "./agents/bouncer.md",
+    "./agents/sherlock.md"
+  ]
 }
