@@ -4,9 +4,9 @@ Claude Code plugin containing specialized agents for the NORRIQ Commerce departm
 
 ## Prerequisites
 
-### Azure CLI Setup (Required for Scout & Karen)
+### Azure CLI Setup (Required for Scout & Chaos Monkey)
 
-Scout and Karen agents fetch work items from Azure DevOps and require Azure CLI with the DevOps extension.
+Scout and Chaos Monkey agents fetch work items from Azure DevOps and require Azure CLI with the DevOps extension.
 
 **1. Install Azure CLI:**
 
@@ -37,6 +37,8 @@ az boards work-item show --id <any-work-item-id>
 If you see work item details, you're all set!
 
 **Note:** Bouncer and Sherlock do not require Azure CLI - they work directly with your codebase.
+
+**Note:** Chaos Monkey replaces the former "Karen" agent (renamed in v0.3.3 for clarity).
 
 ## Agents
 
@@ -126,9 +128,9 @@ If you see work item details, you're all set!
 /agent sherlock
 ```
 
-### 🔥 Karen - QA Validator
+### 🐵 Chaos Monkey - Adversarial QA Validator
 
-**Purpose:** QA validation agent that verifies features match requirements and tries to break them.
+**Purpose:** Adversarial QA agent inspired by Netflix's chaos engineering. Validates features match requirements and systematically tries to break them.
 
 **When to use:** After implementation, before marking work item as done.
 
@@ -136,16 +138,16 @@ If you see work item details, you're all set!
 - Fetches Azure DevOps work item (user story/bug)
 - Validates implementation against acceptance criteria
 - Checks for regressions in related code
-- Performs adversarial "Karen testing":
+- Performs chaos testing (adversarial testing):
   - Invalid inputs and boundary conditions
   - Unexpected user flows
   - Missing validation and error handling
   - Race conditions and concurrent usage
-  - Security vulnerabilities
+  - Security vulnerabilities (XSS, injection, auth bypass)
   - Tries to break the feature in creative ways
 - Generates comprehensive QA report:
   - ✅ Acceptance criteria validation
-  - 🔥 Critical issues found
+  - 🔥 Chaos testing results (critical issues)
   - ⚠️ Warnings and edge cases
   - 🔒 Security concerns
   - 📋 Suggested tests
@@ -153,7 +155,7 @@ If you see work item details, you're all set!
 **Usage:**
 ```bash
 # In Claude Code CLI
-/agent karen
+/agent chaos-monkey
 
 # Provide Azure DevOps work item URL when prompted
 # Example: https://norriq.visualstudio.com/Team%20Ecommerce/_workitems/edit/12345

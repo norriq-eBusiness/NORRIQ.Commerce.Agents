@@ -7,15 +7,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.3.3] - 2025-11-11
+
+### Changed
+- **Renamed Karen to Chaos Monkey** - Renamed for clarity and industry recognition
+  - "Karen" was ambiguous and conflicted with other agent patterns in the community
+  - "Chaos Monkey" clearly signals adversarial testing and chaos engineering inspiration
+  - References Netflix's well-known resilience testing practice
+  - Updated agent name, description, and all documentation references
+  - Updated README with migration note for users
+
 ## [0.3.2] - 2025-11-11
 
 ### Added
-- **Azure CLI prerequisite checks** - Scout and Karen now verify Azure CLI setup before execution
+- **Azure CLI prerequisite checks** - Scout and Chaos Monkey now verify Azure CLI setup before execution
 - **Setup instructions** - Agents provide step-by-step Azure CLI installation and authentication guide if prerequisites are missing
 - **Prerequisites documentation** - Added comprehensive setup guide in README and CLAUDE.md
 
 ### Changed
-- Scout and Karen agents now gracefully handle missing Azure CLI
+- Scout and Chaos Monkey agents now gracefully handle missing Azure CLI
 - Improved work item fetching with proper organization parameter
 
 ## [0.3.1] - 2025-11-11
@@ -49,7 +59,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.2.0] - 2025-11-11
 
 ### Added
-- **Karen agent** - QA validation agent for post-implementation testing
+- **Chaos Monkey agent** (originally named Karen) - QA validation agent for post-implementation testing
   - Fetches Azure DevOps work item details (user stories/bugs)
   - Validates implementation against acceptance criteria
   - Regression checking for related code

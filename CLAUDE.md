@@ -16,7 +16,7 @@ NORRIQ.Commerce.Agents/
 │   ├── scout.md             # Pre-implementation planning agent
 │   ├── bouncer.md           # Pre-PR validation agent
 │   ├── sherlock.md          # Code review agent
-│   └── karen.md             # QA validation agent
+│   └── chaos-monkey.md      # Adversarial QA validation agent
 ├── commands/                 # (Reserved for future slash commands)
 ├── CLAUDE.md                # This file
 └── README.md                # User documentation
@@ -122,16 +122,16 @@ color: blue                # UI color
 - Frontend: Component structure, composables, state management, SSR/client handling, API integration
 - Backend: Clean Architecture, CQRS/MediatR, async patterns, fat handlers, DI, security
 
-### Karen (agents/karen.md)
+### Chaos Monkey (agents/chaos-monkey.md)
 
-**Purpose:** QA validation and adversarial testing
+**Purpose:** Adversarial QA validation and chaos testing (inspired by Netflix's resilience testing)
 
 **Key responsibilities:**
 1. Fetch Azure DevOps work item (user story/bug)
 2. Extract acceptance criteria from work item
 3. Validate implementation against requirements
 4. Check for regressions in related code
-5. Perform adversarial "Karen testing":
+5. Perform adversarial chaos testing:
    - Invalid inputs, boundary conditions
    - Unexpected user flows
    - Security vulnerabilities (XSS, injection, auth bypass)
@@ -148,9 +148,9 @@ color: blue                # UI color
 - Authorization & security (unauthenticated access, role bypass, CSRF)
 - Business logic edge cases (zero quantities, negative values, invalid combinations)
 
-## Prerequisites for Scout & Karen
+## Prerequisites for Scout & Chaos Monkey
 
-Both Scout and Karen agents require Azure CLI to fetch work items from Azure DevOps.
+Both Scout and Chaos Monkey agents require Azure CLI to fetch work items from Azure DevOps.
 
 **Required setup:**
 ```bash
@@ -181,6 +181,8 @@ az devops configure --defaults organization=https://norriq.visualstudio.com
 - Can extract: title, description, acceptance criteria, state, estimate, custom fields
 
 **Note:** Bouncer and Sherlock do not require Azure CLI.
+
+**Note:** Chaos Monkey was renamed from "Karen" in v0.3.3 for clarity and to align with industry-recognized chaos engineering terminology.
 
 ## Technology Context
 
@@ -370,14 +372,15 @@ Potential agents to add to this plugin based on NORRIQ Commerce team needs:
 
 ### High Value
 
-**QA Validator ("Karen")** ✅ **IMPLEMENTED** (v0.2.0)
+**QA Validator ("Chaos Monkey")** ✅ **IMPLEMENTED** (v0.2.0, renamed v0.3.3)
 - ~~Takes Azure DevOps user story/bug link as input~~
 - ~~Fetches acceptance criteria from the work item~~
 - ~~Validates that implementation matches all acceptance criteria~~
 - ~~Checks for regression - searches for related code that might be affected~~
-- ~~Performs "Karen testing" - tries to break the feature~~
+- ~~Performs chaos testing - systematically tries to break the feature~~
 - ~~Generates comprehensive QA report~~
-- **Status:** Live in plugin - see `agents/karen.md`
+- **Status:** Live in plugin - see `agents/chaos-monkey.md`
+- **Note:** Renamed from "Karen" to "Chaos Monkey" in v0.3.3 for clarity
 
 **Test Generator ("Edison")**
 - Generates unit tests for uncovered code
