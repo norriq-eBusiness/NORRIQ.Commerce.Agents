@@ -13,7 +13,7 @@ NORRIQ.Commerce.Agents/
 ├── .claude-plugin/
 │   └── plugin.json           # Plugin manifest
 ├── agents/
-│   ├── macgyver.md          # Pre-implementation planning agent
+│   ├── scout.md             # Pre-implementation planning agent
 │   ├── bouncer.md           # Pre-PR validation agent
 │   ├── sherlock.md          # Code review agent
 │   └── karen.md             # QA validation agent
@@ -55,9 +55,9 @@ color: blue                # UI color
 
 ## Agents
 
-### MacGyver (agents/macgyver.md)
+### Scout (agents/scout.md)
 
-**Purpose:** Pre-implementation planning for speed date meetings
+**Purpose:** Pre-implementation planning for speed date meetings (reconnaissance before coding)
 
 **Key responsibilities:**
 1. Fetch Azure DevOps user story

@@ -4,7 +4,7 @@ Claude Code plugin containing specialized agents for the NORRIQ Commerce departm
 
 ## Agents
 
-### 🔧 MacGyver - Implementation Planning
+### 🔍 Scout - Implementation Planning
 
 **Purpose:** Pre-implementation planning agent for speed date meetings.
 
@@ -33,7 +33,7 @@ Claude Code plugin containing specialized agents for the NORRIQ Commerce departm
 **Usage:**
 ```bash
 # In Claude Code CLI
-/agent macgyver
+/agent scout
 
 # Provide Azure DevOps user story URL when prompted
 # Example: https://norriq.visualstudio.com/Team%20Ecommerce/_workitems/edit/12345

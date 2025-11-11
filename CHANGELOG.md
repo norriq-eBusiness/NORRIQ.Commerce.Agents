@@ -7,10 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.3.1] - 2025-11-11
+
+### Changed
+- **Renamed MacGyver to Scout** - More professional and clearer indication of reconnaissance/planning role
+- Updated all documentation and references
+
 ## [0.3.0] - 2025-11-11
 
 ### Added
-- **MacGyver agent** - Pre-implementation planning agent for speed date meetings
+- **Scout agent** (originally named MacGyver) - Pre-implementation planning agent for speed date meetings
   - Fetches Azure DevOps user story details
   - Analyzes requirements and suggests implementation approach
   - Searches codebase for similar implementations to learn from
