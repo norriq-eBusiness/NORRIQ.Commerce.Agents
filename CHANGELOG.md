@@ -7,6 +7,28 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.3.0] - 2025-11-11
+
+### Added
+- **MacGyver agent** - Pre-implementation planning agent for speed date meetings
+  - Fetches Azure DevOps user story details
+  - Analyzes requirements and suggests implementation approach
+  - Searches codebase for similar implementations to learn from
+  - Performs impact analysis (what could break)
+  - Generates pseudo code and implementation outline
+  - Creates testing strategy
+  - Identifies documentation requirements
+  - Reviews and adjusts estimates based on complexity
+  - Generates comprehensive speed date report covering all 7 talking points:
+    1. How to solve the task
+    2. Similar implementations in codebase
+    3. What could break
+    4. Testing strategy
+    5. Documentation needs
+    6. Pseudo code
+    7. Estimate review
+  - Designed to replace manual speed date preparation
+
 ## [0.2.0] - 2025-11-11
 
 ### Added

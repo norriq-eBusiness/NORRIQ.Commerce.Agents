@@ -4,7 +4,7 @@ This file provides guidance to Claude Code when working with this plugin reposit
 
 ## Project Overview
 
-This is a Claude Code plugin repository containing specialized agents for the NORRIQ Commerce department. The plugin provides three agents that help maintain code quality through automated validation, code review, and QA testing.
+This is a Claude Code plugin repository containing specialized agents for the NORRIQ Commerce department. The plugin provides four agents that help with implementation planning, code quality validation, code review, and QA testing.
 
 ## Repository Structure
 
@@ -13,6 +13,7 @@ NORRIQ.Commerce.Agents/
 ├── .claude-plugin/
 │   └── plugin.json           # Plugin manifest
 ├── agents/
+│   ├── macgyver.md          # Pre-implementation planning agent
 │   ├── bouncer.md           # Pre-PR validation agent
 │   ├── sherlock.md          # Code review agent
 │   └── karen.md             # QA validation agent
@@ -53,6 +54,34 @@ color: blue                # UI color
 - Report format specifications
 
 ## Agents
+
+### MacGyver (agents/macgyver.md)
+
+**Purpose:** Pre-implementation planning for speed date meetings
+
+**Key responsibilities:**
+1. Fetch Azure DevOps user story
+2. Analyze requirements and suggest approach
+3. Search codebase for similar implementations
+4. Identify impact (what could break)
+5. Generate pseudo code/implementation outline
+6. Create testing strategy
+7. Identify documentation needs
+8. Review and adjust estimates
+9. Generate comprehensive speed date report
+
+**Tools:** Bash, Glob, Grep, Read
+
+**Workflow covers 7 talking points:**
+1. How to solve the task (technical approach)
+2. Similar implementations (learning from existing code)
+3. What could break (impact analysis)
+4. Testing strategy (manual + automated)
+5. Documentation needs (internal + external)
+6. Pseudo code (commented implementation outline)
+7. Estimate review (complexity analysis)
+
+**Output:** Comprehensive planning report for team discussion
 
 ### Bouncer (agents/bouncer.md)
 

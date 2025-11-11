@@ -1,8 +1,43 @@
 # NORRIQ Commerce Agents
 
-Claude Code plugin containing specialized agents for the NORRIQ Commerce department. These agents help ensure code quality through automated pre-PR validation, thorough code reviews, and QA validation.
+Claude Code plugin containing specialized agents for the NORRIQ Commerce department. These agents help with implementation planning, code quality validation, thorough code reviews, and QA testing.
 
 ## Agents
+
+### 🔧 MacGyver - Implementation Planning
+
+**Purpose:** Pre-implementation planning agent for speed date meetings.
+
+**When to use:** After user story reaches "Definition of Ready", before implementation starts.
+
+**What it does:**
+- Fetches Azure DevOps user story
+- Analyzes requirements and suggests approach
+- Searches codebase for similar implementations
+- Identifies what could break (impact analysis)
+- Generates pseudo code / implementation outline
+- Suggests testing strategy
+- Identifies documentation needs
+- Reviews and adjusts estimate
+- Creates comprehensive speed date report covering all 7 talking points
+
+**Talking Points Covered:**
+1. Hvordan forventer jeg at løse opgaven?
+2. Er det noget vi har lavet før på andre løsninger?
+3. Hvad kan jeg potentielt komme til at slå i stykker?
+4. Hvordan testes opgaven efterfølgende?
+5. Hvad skal dokumenteres (internt/eksternt)?
+6. Pseudo kode
+7. Review af estimat
+
+**Usage:**
+```bash
+# In Claude Code CLI
+/agent macgyver
+
+# Provide Azure DevOps user story URL when prompted
+# Example: https://norriq.visualstudio.com/Team%20Ecommerce/_workitems/edit/12345
+```
 
 ### 🚪 Bouncer - Pre-PR Validation
 
