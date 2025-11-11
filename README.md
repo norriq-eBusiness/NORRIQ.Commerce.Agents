@@ -1,6 +1,6 @@
 # NORRIQ Commerce Agents
 
-Claude Code plugin containing specialized agents for the NORRIQ Commerce department. These agents help ensure code quality through automated pre-PR validation and thorough code reviews.
+Claude Code plugin containing specialized agents for the NORRIQ Commerce department. These agents help ensure code quality through automated pre-PR validation, thorough code reviews, and QA validation.
 
 ## Agents
 
@@ -53,6 +53,39 @@ Claude Code plugin containing specialized agents for the NORRIQ Commerce departm
 ```bash
 # In Claude Code CLI
 /agent sherlock
+```
+
+### 🔥 Karen - QA Validator
+
+**Purpose:** QA validation agent that verifies features match requirements and tries to break them.
+
+**When to use:** After implementation, before marking work item as done.
+
+**What it does:**
+- Fetches Azure DevOps work item (user story/bug)
+- Validates implementation against acceptance criteria
+- Checks for regressions in related code
+- Performs adversarial "Karen testing":
+  - Invalid inputs and boundary conditions
+  - Unexpected user flows
+  - Missing validation and error handling
+  - Race conditions and concurrent usage
+  - Security vulnerabilities
+  - Tries to break the feature in creative ways
+- Generates comprehensive QA report:
+  - ✅ Acceptance criteria validation
+  - 🔥 Critical issues found
+  - ⚠️ Warnings and edge cases
+  - 🔒 Security concerns
+  - 📋 Suggested tests
+
+**Usage:**
+```bash
+# In Claude Code CLI
+/agent karen
+
+# Provide Azure DevOps work item URL when prompted
+# Example: https://norriq.visualstudio.com/Team%20Ecommerce/_workitems/edit/12345
 ```
 
 ## Installation

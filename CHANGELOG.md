@@ -7,6 +7,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.0] - 2025-11-11
+
+### Added
+- **Karen agent** - QA validation agent for post-implementation testing
+  - Fetches Azure DevOps work item details (user stories/bugs)
+  - Validates implementation against acceptance criteria
+  - Regression checking for related code
+  - Adversarial "Karen testing" - tries to break features:
+    - Invalid inputs, boundary conditions
+    - Unexpected user flows
+    - Security vulnerabilities (XSS, injection, auth bypass)
+    - Race conditions and concurrent usage
+    - Missing validation and error handling
+  - Comprehensive QA report generation:
+    - Acceptance criteria validation results
+    - Critical issues and warnings
+    - Security concerns
+    - Suggested additional tests
+  - Designed to catch issues before formal QA testing
+
 ## [0.1.0] - 2025-11-11
 
 ### Added

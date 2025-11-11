@@ -4,7 +4,7 @@ This file provides guidance to Claude Code when working with this plugin reposit
 
 ## Project Overview
 
-This is a Claude Code plugin repository containing specialized agents for the NORRIQ Commerce department. The plugin provides two agents that help maintain code quality through automated validation and review.
+This is a Claude Code plugin repository containing specialized agents for the NORRIQ Commerce department. The plugin provides three agents that help maintain code quality through automated validation, code review, and QA testing.
 
 ## Repository Structure
 
@@ -14,7 +14,8 @@ NORRIQ.Commerce.Agents/
 │   └── plugin.json           # Plugin manifest
 ├── agents/
 │   ├── bouncer.md           # Pre-PR validation agent
-│   └── sherlock.md          # Code review agent
+│   ├── sherlock.md          # Code review agent
+│   └── karen.md             # QA validation agent
 ├── commands/                 # (Reserved for future slash commands)
 ├── CLAUDE.md                # This file
 └── README.md                # User documentation
@@ -273,6 +274,90 @@ When agents are updated:
 4. Update README.md with agent description
 5. Test thoroughly
 6. Commit
+
+## Future Agent Ideas
+
+Potential agents to add to this plugin based on NORRIQ Commerce team needs:
+
+### High Value
+
+**QA Validator ("Karen")** ✅ **IMPLEMENTED** (v0.2.0)
+- ~~Takes Azure DevOps user story/bug link as input~~
+- ~~Fetches acceptance criteria from the work item~~
+- ~~Validates that implementation matches all acceptance criteria~~
+- ~~Checks for regression - searches for related code that might be affected~~
+- ~~Performs "Karen testing" - tries to break the feature~~
+- ~~Generates comprehensive QA report~~
+- **Status:** Live in plugin - see `agents/karen.md`
+
+**Test Generator ("Edison")**
+- Generates unit tests for uncovered code
+- Creates test stubs for new features
+- Suggests test cases based on code analysis
+- **Rationale:** Team currently has minimal test coverage - this could ease test adoption
+
+**Bug Investigator ("Watson")**
+- Analyzes stack traces and error logs
+- Searches codebase for error sources
+- Suggests fixes based on similar resolved issues
+- Checks recent changes related to reported bugs
+- **Rationale:** Speeds up production debugging and root cause analysis
+
+**API Documentation Generator ("Scribe")**
+- Generates/updates Swagger/OpenAPI documentation
+- Creates example requests/responses
+- Validates API contracts between frontend/backend
+- Updates DTO documentation automatically
+- **Rationale:** Keeps frontend/backend teams in sync, reduces integration issues
+
+### Commerce-Specific
+
+**Business Central Helper ("BC Buddy")**
+- Helps write BC-compatible queries (avoiding OR operators, complex joins)
+- Validates Business Central integration patterns
+- Suggests retry logic and error handling for BC APIs
+- Checks for BC query limitations before code review
+- **Rationale:** NORRIQ uses Business Central with specific query limitations
+
+**Performance Analyzer ("Flash")**
+- Finds N+1 query patterns in backend
+- Detects unnecessary re-renders in Vue components
+- Suggests caching opportunities
+- Analyzes bundle sizes and suggests optimizations
+- Checks image optimization and lazy loading
+- **Rationale:** Commerce sites need optimal performance for user experience
+
+### Developer Experience
+
+**Migration Assistant ("Upgrade")**
+- Helps with framework upgrades (Nuxt 3→4, .NET 8→9)
+- Identifies breaking changes in dependencies
+- Suggests migration steps with code examples
+- Validates compatibility across tech stack
+- **Rationale:** Framework updates are time-consuming and risky
+
+**Dependency Auditor ("Guard")**
+- Checks for outdated npm packages and NuGet packages
+- Scans for known security vulnerabilities
+- Suggests safe upgrade paths with changelogs
+- Identifies unused dependencies
+- **Rationale:** Security and maintenance best practices
+
+**Onboarding Guide ("Mentor")**
+- Explains codebase architecture and patterns
+- Finds examples of specific patterns in the codebase
+- Answers "where should this code go?" questions
+- Provides context about design decisions
+- **Rationale:** Helps new team members ramp up quickly
+
+### Implementation Priority
+
+When adding new agents:
+1. Start with agents that address immediate pain points
+2. Validate agent usefulness with 2-3 team members first
+3. Iterate based on feedback before wider rollout
+4. Keep agents focused - one clear purpose per agent
+5. Update CHANGELOG.md when adding new agents
 
 ## Reference Links
 
