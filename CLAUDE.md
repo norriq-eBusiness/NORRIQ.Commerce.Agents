@@ -93,6 +93,32 @@ color: blue                # UI color
 - Frontend: Component structure, composables, state management, SSR/client handling, API integration
 - Backend: Clean Architecture, CQRS/MediatR, async patterns, fat handlers, DI, security
 
+### Karen (agents/karen.md)
+
+**Purpose:** QA validation and adversarial testing
+
+**Key responsibilities:**
+1. Fetch Azure DevOps work item (user story/bug)
+2. Extract acceptance criteria from work item
+3. Validate implementation against requirements
+4. Check for regressions in related code
+5. Perform adversarial "Karen testing":
+   - Invalid inputs, boundary conditions
+   - Unexpected user flows
+   - Security vulnerabilities (XSS, injection, auth bypass)
+   - Race conditions, concurrent usage
+   - Missing validation and error handling
+6. Generate comprehensive QA report
+
+**Tools:** Bash, Glob, Grep, Read
+
+**Testing categories:**
+- Input validation (empty, null, special chars, length limits)
+- User flow attacks (skip steps, back/forward, refresh, concurrent access)
+- State & race conditions (session expiry, network failures, concurrent updates)
+- Authorization & security (unauthenticated access, role bypass, CSRF)
+- Business logic edge cases (zero quantities, negative values, invalid combinations)
+
 ## Technology Context
 
 ### Frontend Stack (NORRIQ Commerce)
